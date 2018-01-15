@@ -1,7 +1,7 @@
 import * as nativeBaseComponents from 'native-base'
-import { packComponents } from './index'
+import { packComponentsPropStyle } from './index'
 
-const cs = packComponents(nativeBaseComponents,{});
+const cs = packComponentsPropStyle(nativeBaseComponents,{});
 module.exports = {
     ...cs
 }

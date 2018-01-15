@@ -47,9 +47,9 @@ import {
     VirtualizedList,
     WebView
 } from 'react-native';
-import { packComponents } from './index'
+import { packComponentsPropStyle } from './index'
 
-const cs = packComponents({
+const cs = packComponentsPropStyle({
     AccessibilityInfo,
     ActivityIndicator,
     ART,
