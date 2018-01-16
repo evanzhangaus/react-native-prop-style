@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import preStyles from './propStyles';
 
 export function packComponentsPropStyle(Components, styles) {
-    let mergedStyles = [...preStyles, ...styles];
+    console.log('preStyles',preStyles)
+    let mergedStyles = {...preStyles, ...styles};
     let wrappedComponents = {};
     for (let k in Components) {
         wrappedComponents[k] = packPropStyle(Components[k], mergedStyles);
@@ -11,7 +12,7 @@ export function packComponentsPropStyle(Components, styles) {
 }
 
 export function packPropStyle(COM, styles) {
-    let mergedStyles = [...preStyles, ...styles];
+    let mergedStyles = {...preStyles, ...styles};
     return class extends Component {
         constructor(props) {
             super(props);
@@ -20,7 +21,10 @@ export function packPropStyle(COM, styles) {
                 if (k.includes && k.includes('-')) {
                     const ks = k.split("-");
                     const propName = ks[0];
-                    const propValue = ks[1];
+                    let propValue = ks[1];
+                    if (Number.isInteger(parseInt(propValue))) {
+                        propValue = parseInt(propValue);
+                    }
                     if (mergedStyles[propName] && mergedStyles[propName][propValue]) {
                         this.styleProps[propName] = mergedStyles[propName][propValue];
                     } else {
@@ -28,7 +32,7 @@ export function packPropStyle(COM, styles) {
                     }
                 } else {
                     if (mergedStyles[k]) {
-                        this.styleProps = [...this.styleProps, mergedStyles[k]];
+                        this.styleProps = {...this.styleProps, ...mergedStyles[k]};
                     }
                 }
             }
@@ -40,7 +44,7 @@ export function packPropStyle(COM, styles) {
             return (
                 <COM
                     {...props}
-                    style={[this.styleProps, style]}
+                    style={{...this.styleProps, ...style}}
                 >
                     {children}
                 </COM>
