@@ -76,7 +76,7 @@ export default {
     },
     flex5: {
         flex: 5
-    }
+    },
 
     //item
     h1: {
