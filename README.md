@@ -1,10 +1,10 @@
-# react-native-ui-lib
-## It is a library to covert certain props to styles. For example, 
+# react-native-prop-style
+## It is an UI tools which can convert certain props to styles. For example, 
 `fontSize-40` will convert to `style={{fontSize:40}}`
 `color-red` will converto `style={{color:'red'}}`
 
 
-## More important, it can define your prop to all the react-native components and all your self-defined components. 
+## Further more, it can define your prop to all the react-native components and all your self-defined components. 
 
 ## It have predefined some very useful and common props.
 For example:
@@ -36,7 +36,7 @@ const class MyComponent extends Component{
 export default (packPropStyle(MyComponent,myStyle));
 
 ```
-## How to make other ui library support prop style:
+## How to make other UI library support prop style:
 ```js
 // my-native-base.js
 import * as nativeBaseComponents from 'native-base'

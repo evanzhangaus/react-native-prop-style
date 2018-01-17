@@ -14,13 +14,11 @@ export default {
     //layout
     row: {
         flexDirection: 'row',
-        flexWrap: 'wrap',
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
     },
     column: {
         flexDirection: 'column',
-        flexWrap: 'wrap',
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
     },
@@ -61,6 +59,24 @@ export default {
         marginTop: 10,
         marginBottom: 10
     },
+    flex: {
+        flex: 0
+    },
+    flex1: {
+        flex: 1
+    },
+    flex2: {
+        flex: 2
+    },
+    flex3: {
+        flex: 3
+    },
+    flex4: {
+        flex: 4
+    },
+    flex5: {
+        flex: 5
+    }
 
     //item
     h1: {
@@ -83,6 +99,9 @@ export default {
     },
     italic: {
         fontStyle: 'italic'
+    },
+    bold: {
+        fontWeight: 'bold',
     }
 
 }

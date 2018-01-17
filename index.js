@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import preStyles from './propStyles';
+import preStyles from './preStyles';
 
 export function packComponentsPropStyle(Components, styles) {
-    console.log('preStyles',preStyles)
     let mergedStyles = {...preStyles, ...styles};
     let wrappedComponents = {};
     for (let k in Components) {
@@ -40,7 +39,6 @@ export function packPropStyle(COM, styles) {
         render() {
             const { children, style } = this.props;
             const props = this.props;
-            console.log(COM.displayName, this.styleProps);
             return (
                 <COM
                     {...props}
