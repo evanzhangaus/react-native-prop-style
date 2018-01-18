@@ -47,6 +47,10 @@ import {
     VirtualizedList,
     WebView,
 
+
+} from 'react-native';
+
+import {
     // APIs
     ActionSheetIOS,
     Alert,
@@ -105,7 +109,7 @@ import {
 
     // Deprecated
     Navigator
-} from 'react-native';
+} from 'react-native'
 
 import { packComponentsPropStyle } from './index'
 
@@ -158,5 +162,61 @@ const cs = packComponentsPropStyle({
     WebView
 }, {});
 module.exports = {
-    ...cs
+    ...cs,
+    // APIs
+    ActionSheetIOS,
+    Alert,
+    AlertIOS,
+    Animated,
+    AppRegistry,
+    AppState,
+    AsyncStorage,
+    BackAndroid, // deprecated: use BackHandler instead
+    BackHandler,
+    CameraRoll,
+    Clipboard,
+    DatePickerAndroid,
+    DeviceInfo,
+    Dimensions,
+    Easing,
+    findNodeHandle,
+    I18nManager,
+    ImagePickerIOS,
+    InteractionManager,
+    Keyboard,
+    LayoutAnimation,
+    Linking,
+    NativeEventEmitter,
+    NetInfo,
+    PanResponder,
+    PermissionsAndroid,
+    PixelRatio,
+    // PushNotificationIOS,
+    Settings,
+    Share,
+    StatusBarIOS,
+    StyleSheet,
+    Systrace,
+    TimePickerAndroid,
+    TVEventHandler,
+    UIManager,
+    unstable_batchedUpdates,
+    Vibration,
+    VibrationIOS,
+
+    // Plugins
+    DeviceEventEmitter,
+    NativeAppEventEmitter,
+    NativeModules,
+    Platform,
+    processColor,
+    requireNativeComponent,
+    takeSnapshot,
+
+    // Prop Types
+    ColorPropType,
+    EdgeInsetsPropType,
+    PointPropType,
+    ViewPropTypes,
+
 }
