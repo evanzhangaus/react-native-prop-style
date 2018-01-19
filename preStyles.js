@@ -14,52 +14,19 @@ export default {
     //layout
     row: {
         flexDirection: 'row',
-        alignItems: 'flex-start',
-        justifyContent: 'flex-start',
     },
     column: {
         flexDirection: 'column',
-        alignItems: 'flex-start',
-        justifyContent: 'flex-start',
     },
     center: {
         alignItems: 'center',
         justifyContent: 'center',
         alignContent: 'center',
     },
-    centerH: {
-        alignItems: 'flex-start',
-        justifyContent: 'center',
-        alignContent: 'center',
-    },
-    centerV: {
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        alignContent: 'center',
-    },
-    padding: {
-        padding: 10
-    },
-    paddingH: {
-        paddingLeft: 10,
-        paddingRight: 10
-    },
-    paddingV: {
-        paddingTop: 10,
-        paddingBottom: 10
-    },
-    margin: {
-        margin: 10
-    },
-    marginH: {
-        marginLeft: 10,
-        marginRight: 10
-    },
-    marginV: {
-        marginTop: 10,
-        marginBottom: 10
-    },
     flex: {
+        flex: 0
+    },
+    flex0: {
         flex: 0
     },
     flex1: {
@@ -97,11 +64,13 @@ export default {
     link: {
         textDecorationLine: 'underline'
     },
+    underline: {
+        textDecorationLine: 'underline'
+    },
     italic: {
         fontStyle: 'italic'
     },
     bold: {
         fontWeight: 'bold',
     }
-
 }
