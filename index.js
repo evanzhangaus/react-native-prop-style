@@ -19,8 +19,7 @@ export function packPropStyle(COM, styles) {
             for (let k in props) {
                 if (k.includes && k.includes('-')) {
                     const ks = k.split("-");
-                    const propName = ks[0];
-                    const propNameFull = mapAbbreviation(ks[0]);
+                    const propName = mapAbbreviation(ks[0]);
                     let propValue = ks[1];
                     if (Number.isInteger(parseInt(propValue))) {
                         propValue = parseInt(propValue);
