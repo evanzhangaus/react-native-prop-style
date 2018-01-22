@@ -19,7 +19,7 @@ export function packPropStyle(COM, styles) {
             for (let k in props) {
                 if (k.includes && k.includes('-')) {
                     const ks = k.split("-");
-                    const propName = ks[0];
+                    const propName = mapAbbreviation(ks[0]);
                     let propValue = ks[1];
                     if (Number.isInteger(parseInt(propValue))) {
                         propValue = parseInt(propValue);
@@ -49,4 +49,27 @@ export function packPropStyle(COM, styles) {
             )
         }
     }
+}
+
+function mapAbbreviation(str) {
+    let ret = '';
+    switch (str) {
+        case 'paddingH':
+            ret = paddingHorizontal;
+            break;
+        case 'paddingV':
+            ret = paddingVertical;
+            break;
+        case 'marginH':
+            ret = marginHorizontal;
+            break;
+        case 'marginV':
+            ret = marginVertical;
+            break;
+        case 'bg':
+            ret = backgroundColor;
+        default:
+            ret = str;
+    }
+    return ret;
 }
