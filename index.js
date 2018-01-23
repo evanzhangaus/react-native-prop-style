@@ -68,6 +68,7 @@ function mapAbbreviation(str) {
             break;
         case 'bg':
             ret = 'backgroundColor';
+            break;
         default:
             ret = str;
     }

@@ -29,5 +29,5 @@
         "url": "git+ssh://git@github.com/evanzhangaus/react-native-prop-style.git"
     },
     "scripts": {},
-    "version": "0.2.7"
+    "version": "0.2.8"
 }
