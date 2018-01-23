@@ -12,7 +12,10 @@ export function packComponentsPropStyle(Components, styles) {
 
 export function packPropStyle(COM, styles) {
     let mergedStyles = { ...preStyles, ...styles };
-    return class extends Component {
+    // if COM is a object or null, it can't be a parent class
+    if (!COM || typeof COM !== 'function') return COM;
+    // The new component extends from COM, so that it can have all attributes and features from COM
+    return class extends COM {
         constructor(props) {
             super(props);
             this.styleProps = {}
