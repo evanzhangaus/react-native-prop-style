@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { View } from 'react-native';
 import preStyles from './preStyles';
 
 export function packComponentsPropStyle(Components, styles) {
@@ -15,7 +16,7 @@ export function packPropStyle(COM, styles) {
     // if COM is a object or null, it can't be a parent class
     if (!COM || typeof COM !== 'function') return COM;
     // The new component extends from COM, so that it can have all attributes and features from COM
-    return class extends COM {
+    let NewCOM = class extends Component {
         constructor(props) {
             super(props);
             this.styleProps = {}
@@ -42,16 +43,16 @@ export function packPropStyle(COM, styles) {
         render() {
             const { children, style } = this.props;
             const props = this.props;
-            return (
-                <COM
-                    {...props}
-                    style={[this.styleProps, style]}
-                >
-                    {children}
-                </COM>
-            )
+            return (<COM {...props} style={[this.styleProps, style]}>{children}</COM>)
         }
     }
+    if(COM.displayName === "Text")
+    for (let k in COM) {
+        if (COM[k]) {
+            NewCOM[k] = COM[k];
+        }
+    }
+    return NewCOM;
 }
 
 function mapAbbreviation(str) {
