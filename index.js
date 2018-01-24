@@ -16,9 +16,9 @@ export function packPropStyle(COM, styles) {
     // if COM is a object or null, it can't be a parent class
     if (!COM || typeof COM !== 'function') return COM;
     // The new component extends from COM, so that it can have all attributes and features from COM
-    let NewCOM = class extends Component {
+    let NewCOM = class extends COM {
         constructor(props) {
-            super(props);
+            super(...arguments);
             this.styleProps = {}
             for (let k in props) {
                 if (k.includes && k.includes('-')) {
